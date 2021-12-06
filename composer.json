@@ -1,0 +1,28 @@
+{
+    "name": "webidea24/magento2-module-structured-data-breadcrumb",
+    "version": "1.0.0",
+    "description": "N/A",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "WEBiDEA",
+            "email": "github@webidea24.de",
+            "homepage": "https://www.webidea24.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "magento/framework": "*"
+    },
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Webidea24\\StructuredDataBreadcrumb\\": ""
+        }
+    }
+}

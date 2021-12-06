@@ -1,0 +1,29 @@
+<?php
+/**
+ * @var array $crumbs
+ */
+$index = 0;
+$list = array_values(array_map(static function ($listItem) use (&$index) {
+    $return = [
+        "@type" => "ListItem",
+        "position" => $index,
+        "name" => $listItem['label'],
+    ];
+
+    if (!isset($listItem['last']) || !$listItem['last']) {
+        $return["item"] = $listItem['link'];
+    }
+
+    $index++;
+    return $return;
+}, $crumbs));
+
+?>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": <?=json_encode($list) ?>
+    }
+</script>
