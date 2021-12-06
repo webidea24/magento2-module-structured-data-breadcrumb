@@ -2,6 +2,11 @@
 /**
  * @var array $crumbs
  */
+
+if (!(is_array($crumbs) && count($crumbs))) {
+    return;
+}
+
 $index = 0;
 $list = array_values(array_map(static function ($listItem) use (&$index) {
     $return = [
@@ -24,6 +29,7 @@ $list = array_values(array_map(static function ($listItem) use (&$index) {
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": <?=json_encode($list) ?>
+        "itemListElement": <?= json_encode($list) ?>
     }
+
 </script>
